@@ -1,0 +1,363 @@
+html, body {
+	width: 100%;
+	height: 100%;
+	margin:0;
+
+	font-family: 'Roboto', sans-serif;
+}
+
+ul {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+}
+
+.study-plan {
+	width: 100%;
+	height: 100%;
+	display: flex;
+	flex-direction: row;
+	justify-content: flex-start;
+}
+
+.study-plan .nav-bar {
+	width: 100px;
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+	align-items: center;
+	padding-top: 36px;
+	background-color: #9BF0E6;
+	box-sizing: border-box;
+}
+
+.study-plan .nav-bar li:first-child {
+	border-radius: 20px;
+}
+
+.study-plan .nav-bar li {
+	width: 40px;
+	height: 40px;
+	margin: 10px 0px;
+	background-color: #C4C4C4;
+}
+
+.study-plan .right-part {
+	flex: 1;
+	padding: 20px 50px;
+}
+
+.study-plan .title {
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+	padding: 20px 10px;
+	margin-bottom: 20px;
+	border-bottom: 1px solid #666666;
+}
+
+.study-plan .title span:first-child {
+	font-size: 30px;
+	font-weight: bold;
+	margin-bottom: 20px;
+}
+
+.study-plan .title span:last-child {
+	color: #666666;
+}
+
+.study-plan .right-part .list-part {
+	margin: 0px 50px; 
+	flex: 1;
+}
+
+.study-plan .menu ul {
+	width: 100%;
+	height: fit-content;
+}
+
+.study-plan .menu ul li {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-evenly;
+	width: 100%;
+	height: fit-content;
+	padding: 20px;
+	margin-bottom: 20px;
+	border: 1px solid #c4c4c4;
+	border-radius: 50px;
+	font-size: 20px;
+	box-sizing: border-box;
+}
+
+.study-plan .menu .list .register-btn {
+	padding: 5px 10px;
+	text-align: center;
+	background-color: #C4C4C4;
+}
+
+.menu {
+	display : flex;
+}
+
+.menu-item {
+    margin: 5px;
+    font-size:15px;
+    line-height: 3px;
+    display: flex;
+    box-shadow: 2px 2px 1px rgba(0, 0, 0, 0.09);
+}
+
+.menu-link {
+    padding: 1em;
+    color:black;
+    text-decoration: none;
+}
+
+.now-menu-link {
+    padding: 1em;
+    background:#9BF0E6;
+    color:black;
+    text-decoration: none;
+}
+
+.achi-plan-info {
+	height: 75%;
+	margin: 1% 5% 0 5%;
+}
+
+.achi-info {
+	margin-top: 20px;
+	width: 822px;
+	height: 234px;
+    background: #FFFFFF;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 20px;
+    display: inline-flex;
+}
+
+.weekly-rate {
+	width: 45%;
+	height: 100%;
+	
+	text-align: center;
+}
+
+.weekly-rate-title{
+	margin: 10px;
+	font-size: 24px;
+    line-height: 28px;
+}
+
+.weekly-rate1, .weekly-rate2, .weekly-rate3 {
+	display: inline-flex;
+    flex-direction: column;
+    margin: 5%;
+}
+
+.weekly-rate-date1, .weekly-rate-date2, .weekly-rate-date3 {
+	margin-bottom: 20%;
+}
+
+.fa-circle {
+	color: #44DFB0;
+	font-size: 70px;
+}
+
+.monthly-rate {
+	width: 60%;
+	height: 100%;
+}
+
+.monthly-rate-title{
+	padding-top: 10px;
+	text-align: center;
+	font-size: 24px;
+    line-height: 28px;
+    border-left: 2px solid #C4C4C4;
+}
+
+.monthly-achi {
+	padding-top: 20px;
+	border-left: 2px solid #C4C4C4;
+}
+
+.monthly-achi1, .monthly-achi2 {
+	display: flex;
+	margin: 0 4% 2% 4%;
+	padding-bottom: 2%;
+	border-bottom: 1px solid #C4C4C4;
+}
+
+.monthly-achi3{
+	display: flex;
+	margin: 0 4% 2% 4%;
+}
+
+.monthly-date1, .monthly-date2, .monthly-date3 {
+	margin: 0 5%;
+	font-size: 20px;
+}
+
+.monthly-achi-count1, .monthly-achi-count2, .monthly-achi-count3 {
+	margin-right: 17%;
+	padding-top: 3px;
+	color: #4DA1EF;
+}
+
+.progress-bar {
+	margin-top: 9px;
+    width: 25%;
+    height: 10px;
+    background-color: #dedede;
+    font-weight: 600;
+    font-size: .8rem;
+    border-radius: 20px;
+}
+
+.progress-bar .progress {
+    width: 72%;  
+    height: 10px;
+    padding: 0;
+    text-align: center;
+    background-color: #FF8585;
+    color: #111;
+    border-radius: 20px;
+}
+
+.plan-info {
+	display:flex;
+	margin-top:50px;
+}
+
+.monthly-plan {
+	background: #FFFFFF;
+    box-shadow: 0px 4px 4px rgb(0 0 0 / 25%);
+    border-radius: 20px;
+}
+
+.monthly-plan-title {
+	margin-left: 15px;
+	font-size: 24px;
+    line-height: 28px;
+}
+
+.monthly-plan-box {
+	width: 355px
+}
+
+.monthly-plan-date-btn {
+	margin: 30px;
+    text-align: center;
+}
+
+.monthly-plan-date {
+	margin: 0 30px;
+    font-size: 24px;
+}
+
+.monthly-check-list {
+    height: 200px;
+    text-align: center;
+}
+
+.fa-square {
+	font-size: 25px;
+    color: #C4C4C4;
+}
+
+.list {
+    display: inline-flex;
+}
+
+.text {
+	width: 288px;
+	margin: 5px 0 5px 5px;
+	font-size: 17px;
+    text-align: left;
+    border-bottom: 1px solid #C4C4C4;
+}
+
+.weekly-info {
+	width: 100%;
+    margin-left: 35px;
+    display: flex;
+    background: #FFFFFF;
+    box-shadow: 0px 4px 4px rgb(0 0 0 / 25%);
+    border-radius: 20px;
+}
+
+.weekly-plan {
+    width: 50%;
+}
+
+.weekly-plan-title {
+	margin-left: 15px;
+	font-size: 24px;
+    line-height: 28px;
+}
+
+.weekly-plan-box {
+	border-right: 2px solid #C4C4C4;
+}
+
+.weekly-plan-date-btn {
+	margin: 30px;
+	text-align: center;
+}
+
+.fas .fa-chevron-right {
+	color: #666666;
+}
+
+.weekly-plan-date {
+	margin: 0 30px;
+    font-size: 24px;    
+}
+
+.weekly-check-list {
+	text-align: center;
+}
+
+.user-list {
+	margin: 8% 0% 0% 3%;
+	width: 45%;
+}
+
+.user-list-detail1, .user-list-detail2 {
+	border-bottom: 1px solid #C4C4C4;
+	margin-bottom: 3%;
+    padding-bottom: 1%;
+    display: flex;
+} 
+
+.user-list-detail3 {
+	margin-bottom: 3%;
+    padding-bottom: 1%;
+    display: flex;
+}
+
+.fa-user-circle {
+	font-size: 35px;
+	color: #BECFC9;
+}
+
+.user-name {
+	font-size: 20px;
+	margin: 0% 7% 0% 5%;
+	padding-top: 1%;
+}
+
+.user-autho {
+	font-size: 14px;
+	color: #989898;
+	margin-right: 5%;
+	padding-top: 2%;
+}
+
+.user-achi {
+	font-size: 14px;
+	color: #708FFF;
+	padding-top: 2%;
+}
