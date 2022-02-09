@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="./register.css">
+	<title>Register</title>
+</head>
+<body>
+	<section class="main">
+			<div class="register">
+				<!--회원가입 창-->
+				<div class = "content">	
+					<span class = "top">REGISTER</span>
+				
+					<fieldset class = "personal-info">
+						<span class = "text">개인 정보</span>		
+						<br>		
+						<input type="text" class="input-name" placeholder="이름" name="userName" maxlength="20">
+						<input type='checkbox' class="check-gender" name='gender' value='female'/>
+						<span class = "gender">여</span>
+						<input type='checkbox' class="check-gender" name='gender' value='male'/>
+						<span class = "gender">남</span>		
+						
+						<br><br>
+						<input type="text" class="form-control" placeholder="전화번호" name="userTel" maxlength="3">
+						<span class = "hyphen">-</span>		
+						<input type="text" class="form-control" name="userTel" maxlength="4">
+						<span class = "hyphen">-</span>		
+						<input type="text" class="form-control" name="userTel" maxlength="4">
+					</fieldset>
+					
+					<fieldset class = "usage-info">
+						<span class = "text">이용 정보</span>				
+						<input type="text" class="form-control" placeholder="학번" name="userID" maxlength="20">
+						<br><br>
+						<input type="password" class="form-control" placeholder="Password" name="userPW" maxlength="20">
+					</fieldset>
+					
+					<fieldset class = "dept-info">
+						<span class = "text">학부 정보 (가입일 기준)</span>	
+						<BR><BR>										
+						<select class = "grade">
+							<option>1</option><option>2</option>
+							<option>3</option><option>4</option>
+						</select>
+						<span class = "grade">학년</span>		
+						<br>									
+						<input type='checkbox' class="check-state" name='attend' value='attend' />
+						<span class = "state">재학</span>	
+  						<input type='checkbox' class="check-state" name='absence' value='absence' />
+						<span class = "state">휴학</span>	
+  						<input type='checkbox' class="check-state" name='military' value='military' />
+  						<span class = "state">군휴학</span>	
+  						<br>
+						<input type="text" class="form-control" placeholder="학과(부)" name="dept" maxlength="20">						
+					</fieldset>
+					<input type="submit" class="register-btn" value="가입하기" />
+				</div>				
+			</div>	
+																
+	</section>
+</body>
+</html>
+
+				
