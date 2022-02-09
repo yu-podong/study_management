@@ -1,12 +1,31 @@
 package com.study_management.domain;
 
-import oracle.sql.DATE;
-
-public class StudyRegDTO {
-    private Integer regID;
+public class StudyMemDTO {
     private Integer userID;
     private Integer studyID;
-    private String ans1;
-    private String ans2;
-    private String ans3;
+    private Integer studyAutho;
+
+    // Constructure
+
+    // Getter
+    public Integer getStudyID() {
+        return studyID;
+    }
+    public Integer getUserID() {
+        return userID;
+    }
+    public Integer getStudyAutho() {
+        return studyAutho;
+    }
+
+    // Setter
+    public void setStudyID(Integer studyID) {
+        this.studyID = studyID;
+    }
+    public void setUserID(Integer userID) {
+        this.userID = userID;
+    }
+    public void setStudyAutho(Integer studyAutho) {
+        this.studyAutho = studyAutho;
+    }
 }
