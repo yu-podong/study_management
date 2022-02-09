@@ -1,2 +1,4 @@
-package com.study_management.mapper;public interface AdminMapper {
+package com.study_management.mapper;
+
+public interface AdminMapper {
 }

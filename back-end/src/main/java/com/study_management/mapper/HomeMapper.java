@@ -1,4 +1,4 @@
 package com.study_management.mapper;
 
-public interface CommuMapper {
+public interface HomeMapper {
 }
