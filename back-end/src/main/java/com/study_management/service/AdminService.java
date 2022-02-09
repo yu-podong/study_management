@@ -1,2 +1,4 @@
-package com.study_management.service;public interface AdminService {
+package com.study_management.service;
+
+public interface AdminService {
 }

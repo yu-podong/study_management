@@ -1,4 +1,4 @@
 package com.study_management.service;
 
-public interface CommuService {
+public interface HomeService {
 }
