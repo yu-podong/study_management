@@ -1,25 +1,33 @@
 package com.study_management.controller;
 
+import javax.inject.Inject;
+
+import org.apache.ibatis.session.SqlSession;
+import org.apache.ibatis.session.SqlSessionFactory;
 import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.springframework.test.context.ContextConfiguration;
+import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
-import java.sql.Connection;
-import java.sql.DriverManager;
-
-public class MysqlTest {
-    private static final String DRIVER = "com.mysql.jdbc.Driver";
-    private static final String URL = "jdbc:mysql://127.0.0.1:3307/mysqlconnectdb?useUnicode=true&serverTimezone=Asia/Seoul"; // jdbc:mysql://127.0.0.1:3306/여러분이 만드신 스키마이름
-    private static final String USER = "root"; //DB 사용자명
-    private static final String PW = "yugun1596!@";   //DB 사용자 비밀번호
+@RunWith(SpringJUnit4ClassRunner.class)
+@ContextConfiguration(locations={"file:src/main/webapp/WEB-INF/spring/**/root-context.xml"})
+public class MybatisTest {
+    @Inject
+    private SqlSessionFactory sqlFactory;
 
     @Test
-    public void testConnection() throws Exception{
-        Class.forName(DRIVER);
+    public void testFactory(){
+        System.out.println("\n >>>>>>>>>> sqlFactory 출력 : "+sqlFactory);
+    }
 
-        try(Connection con = DriverManager.getConnection(URL, USER, PW)){
-            System.out.println("성공");
-            System.out.println(con);
-        }catch (Exception e) {
-            System.out.println("에러발생");
+    @Test
+    public void testSession() throws Exception{
+
+        try(SqlSession session = sqlFactory.openSession()){
+
+            System.out.println(" >>>>>>>>>> session 출력 : "+session+"\n");
+
+        } catch (Exception e) {
             e.printStackTrace();
         }
     }
