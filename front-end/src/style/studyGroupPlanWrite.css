@@ -1,0 +1,214 @@
+html, body {
+	width: 100%;
+	height: 100%;
+	margin:0;
+
+	font-family: 'Roboto', sans-serif;
+}
+
+ul {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+}
+
+.study-plan {
+	width: 100%;
+	height: 100%;
+	display: flex;
+	flex-direction: row;
+	justify-content: flex-start;
+}
+
+.study-plan .nav-bar {
+	width: 100px;
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+	align-items: center;
+	padding-top: 36px;
+	background-color: #9BF0E6;
+	box-sizing: border-box;
+}
+
+.study-plan .nav-bar li:first-child {
+	border-radius: 20px;
+}
+
+.study-plan .nav-bar li {
+	width: 40px;
+	height: 40px;
+	margin: 10px 0px;
+	background-color: #C4C4C4;
+}
+
+.study-plan .right-part {
+	flex: 1;
+	padding: 20px 50px;
+}
+
+.study-plan .title {
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+	padding: 20px 10px;
+	margin-bottom: 20px;
+	border-bottom: 1px solid #666666;
+}
+
+.study-plan .title span:first-child {
+	font-size: 30px;
+	font-weight: bold;
+	margin-bottom: 20px;
+}
+
+.study-plan .title span:last-child {
+	color: #666666;
+}
+
+.study-plan .right-part .list-part {
+	margin: 0px 50px; 
+	flex: 1;
+}
+
+.study-plan .menu ul {
+	width: 100%;
+	height: fit-content;
+}
+
+.study-plan .menu ul li {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-evenly;
+	width: 100%;
+	height: fit-content;
+	padding: 20px;
+	margin-bottom: 20px;
+	border: 1px solid #c4c4c4;
+	border-radius: 50px;
+	font-size: 20px;
+	box-sizing: border-box;
+}
+
+.study-plan .menu .list .register-btn {
+	padding: 5px 10px;
+	text-align: center;
+	background-color: #C4C4C4;
+}
+
+.menu {
+	display : flex;
+}
+
+.menu-item {
+    background: #ffffff;
+    margin: 5px;
+    font-size:15px;
+    line-height: 3px;
+    display: flex;
+    align-items: center;
+    box-shadow: 2px 2px 1px rgba(0, 0, 0, 0.09);
+}
+
+.menu-link {
+    display: block;
+    padding: 1em;
+    background:#ffffff;
+    color:black;
+    text-decoration: none;
+    text-align: center;    
+}
+
+.now-menu-link {
+    display: block;
+    padding: 1em;
+    background:#9BF0E6;
+    color:black;
+    text-decoration: none;
+    text-align: center;
+}
+
+.plan-write-form {
+	width: 90%;
+	height: 75%;
+	margin: 2% 5% 0 5%;
+	display: inline-flex;
+}
+
+.study-weekly-plan {
+	width: 50%;
+	height: 100%;
+}
+
+.study-monthly-plan {
+	width: 50%;
+	height: 100%;
+}
+
+.plan-title {
+	padding-bottom:15px;
+	border-bottom: 1px solid #666666;
+    font-size: 25px;
+    text-align: center;
+}
+
+.detail-weekly-plan {
+	border-right: 1px solid #666666;
+}
+
+.plan-pre-btn {
+	padding-top: 20px; 
+	text-align: center;
+}
+
+.fa-chevron-up, .fa-chevron-down {
+    font-weight: 900;
+    color: #C4C4C4;
+    font-size: 40px;
+}
+
+.plan-date {
+	margin: 25px;
+	font-size: 20px;
+	text-align: center;
+}
+
+.plan-date:after {
+	content: "";
+    display: block;
+	border-bottom: 1px solid #61E4C5;
+}
+
+.check-list {
+	margin: 20px;
+	text-align: center;
+}
+
+.checkbox {
+	width: 21px;
+	height: 21px;
+}
+
+.text {
+	width: 288px;
+	margin: 5px;
+	font-size: 17px;
+    border: 0px;
+    border-bottom: 1px solid #C4C4C4;
+}
+
+input:focus {
+	outline: none;
+}
+
+.plan-add {
+	text-align: center;
+	font-size: 15px;
+	color: #666666;
+}
+
+.plan-aft-btn {
+	margin-top: 140px; /*수정해야함*/
+	text-align: center;
+}
