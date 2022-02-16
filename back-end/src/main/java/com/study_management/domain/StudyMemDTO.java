@@ -1,5 +1,12 @@
 package com.study_management.domain;
 
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
 public class StudyMemDTO {
     private Integer userID;
     private Integer studyID;

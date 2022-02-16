@@ -2,8 +2,43 @@
 <!DOCTYPE mapper
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.study_management.mapper.StudyMapper">
-	<!--
-		do something...
-	-->
+<mapper namespace="com/study_management/mapper/StudyMapper">
+	<select id="getList" resultType="com.study_management.domain.StudyDTO">
+		select *
+		from study
+	</select>
+
+	<insert id="create">
+		insert into study
+		values (#{studyID}, #{studyName}, #{simpleName}, #{detail}, #{recomGra},
+		        #{maxMem}, #{time}, #{isGrant}, #{isQues1}, #{isQues2}, #{isQues3}, #{countQues})
+	</insert>
+
+	<insert id="apply">
+
+	</insert>
+
+	<select id="mainPage" resultType="com.study_management.domain.StudyDTO">
+
+	</select>
+
+	<select id="member" resultType="com.study_management.domain.StudyMemDTO">
+
+	</select>
+
+	<select id="regMember" resultType="com.study_management.domain.StudyRegDTO">
+
+	</select>
+
+	<delete id="modifyIsReg">
+
+	</delete>
+
+	<insert id="createMem">
+
+	</insert>
+
+	<update id="modifyAutho">
+
+	</update>
 </mapper>

@@ -1,6 +1,13 @@
 package com.study_management.domain;
 
-public class StudyInfoDTO {
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
+public class StudyDTO {
     private Integer studyID;
     private String studyName;
     private String simpleDesc;
@@ -12,7 +19,7 @@ public class StudyInfoDTO {
     private Boolean isQues1;
     private Boolean isQues2;
     private Boolean isQues3;
-    private String addQues;
+    private String addQues; // 제거
     private Integer countQues;
 
     // Constructure

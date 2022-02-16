@@ -1,7 +1,13 @@
 package com.study_management.domain;
 
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 import oracle.sql.DATE;
 
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
 public class StudyRegDTO {
     private Integer regID;
     private Integer userID;
