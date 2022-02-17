@@ -3,7 +3,66 @@
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.study_management.mapper.PlanMapper">
-	<!--
-		do something...
-	-->
+
+	<select id="getWeeklyList" resultType="com.study_management.domain.WeeklyPlanDTO">
+	<![CDATA[
+		select * from weeklyplan
+		]]>
+	</select>
+
+	<select id="getMonthlyList" resultType="com.study_management.domain.MonthlyPlanDTO">
+	<![CDATA[
+		select * from monthlyplan
+		]]>
+	</select>
+
+	<insert id="insertWeekly">
+		insert into weeklyplan (planID,studyID,content,isCheck)
+		values (seq_planID.nextval, #{studyID}, #{content}, #{isCheck})
+	</insert>
+
+	<insert id="insertMonthly">
+		insert into monthlyplan (planID,studyID,content,isCheck)
+		values (seq_planID.nextval, #{studyID}, #{content}, #{isCheck})
+	</insert>
+
+
+	<insert id="insertSelectKeyWeekly"> <!-- 별도의 PK값등을 얻기 위해서 사용 -->
+
+		<selectKey keyProperty="planID" order="BEFORE"
+				   resultType="long">
+			select seq_planID.nextval from dual
+		</selectKey>
+
+		insert into weeklyplan (planID,studyID,content,isCheck)
+		values (#{planID},#{studyID}, #{content}, #{isCheck})
+	</insert>
+
+	<insert id="insertSelectKeyMonthly"> <!-- 별도의 PK값등을 얻기 위해서 사용 -->
+
+		<selectKey keyProperty="planID" order="BEFORE"
+				   resultType="long">
+			select seq_planID.nextval from dual
+		</selectKey>
+
+		insert into monthlyplan (planID,studyID,content,isCheck)
+		values (#{planID},#{studyID}, #{content}, #{isCheck})
+	</insert>
+
+	<select id="read" resultType="com.study_management.domain.WeeklyPlanDTO">
+		select * from weeklyplan where studyID = #{studyID}
+	</select>
+
+	<delete id="delete">
+		delete weeklyplan where studyID = #{studyID}
+	</delete>
+
+	<update id="update">
+		update weeklyplan
+		set content = #{content},
+			isCheck = #{isCheck}
+		where studyID= #{studyID},
+	</update>
+
+
 </mapper>
