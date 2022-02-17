@@ -11,7 +11,7 @@ public class WeeklyPlanDTO {
     private Integer planID;
     private Integer studyID;
     private String content;
-    private Boolean isCheck;
+    private boolean isCheck;
 
     // Constructure
 
@@ -26,7 +26,7 @@ public class WeeklyPlanDTO {
     public Integer getPlanID() {
         return planID;
     }
-    public Boolean getCheck() {
+    public boolean getCheck() {
         return isCheck;
     }
 
@@ -40,7 +40,7 @@ public class WeeklyPlanDTO {
     public void setPlanID(Integer planID) {
         this.planID = planID;
     }
-    public void setCheck(Boolean check) {
+    public void setCheck(boolean check) {
         isCheck = check;
     }
 }

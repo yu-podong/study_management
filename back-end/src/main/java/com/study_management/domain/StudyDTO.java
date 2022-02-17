@@ -15,10 +15,10 @@ public class StudyDTO {
     private Integer recomGra;
     private Integer maxMem;
     private String time;
-    private Boolean isGrant;
-    private Boolean isQues1;
-    private Boolean isQues2;
-    private Boolean isQues3;
+    private boolean isGrant;
+    private boolean isQues1;
+    private boolean isQues2;
+    private boolean isQues3;
     private String addQues; // 제거
     private Integer countQues;
 
@@ -53,16 +53,16 @@ public class StudyDTO {
     public String getTime() {
         return time;
     }
-    public Boolean getGrant() {
+    public boolean getGrant() {
         return isGrant;
     }
-    public Boolean getQues1() {
+    public boolean getQues1() {
         return isQues1;
     }
-    public Boolean getQues2() {
+    public boolean getQues2() {
         return isQues2;
     }
-    public Boolean getQues3() {
+    public boolean getQues3() {
         return isQues3;
     }
 
@@ -79,20 +79,20 @@ public class StudyDTO {
     public void setCountQues(Integer countQues) {
         this.countQues = countQues;
     }
-    public void setGrant(Boolean grant) {
-        isGrant = grant;
+    public void setIsGrant(boolean grant) {
+        this.isGrant = grant;
     }
     public void setMaxMem(Integer maxMem) {
         this.maxMem = maxMem;
     }
-    public void setQues1(Boolean ques1) {
-        isQues1 = ques1;
+    public void setIsQues1(boolean ques1) {
+        this.isQues1 = ques1;
     }
-    public void setQues2(Boolean ques2) {
-        isQues2 = ques2;
+    public void setIsQues2(boolean ques2) {
+        this.isQues2 = ques2;
     }
-    public void setQues3(Boolean ques3) {
-        isQues3 = ques3;
+    public void setIsQues3(boolean ques3) {
+        this.isQues3 = ques3;
     }
     public void setRecomGra(Integer recomGra) {
         this.recomGra = recomGra;

@@ -11,7 +11,7 @@ public class MonthlyPlanDTO {
     private Integer planID;
     private Integer studyID;
     private String content;
-    private Boolean isCheck;
+    private boolean isCheck;
 
     // Constructure
 
@@ -34,8 +34,8 @@ public class MonthlyPlanDTO {
     public void setContent(String content) {
         this.content = content;
     }
-    public void setCheck(boolean check) {
-        isCheck = check;
+    public void seIstCheck(boolean check) {
+        this.isCheck = check;
     }
     public void setPlanID(Integer planID) {
         this.planID = planID;
