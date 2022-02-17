@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.study_management.mapper.StudyMapper">
+	<select id="getList" resultType="com.study_management.domain.StudyDTO">
+		select *
+		from study
+	</select>
+
+	<insert id="create">
+		insert into study
+		values (#{studyID}, #{studyName}, #{simpleName}, #{detail}, #{recomGra},
+		        #{maxMem}, #{time}, #{isGrant}, #{isQues1}, #{isQues2}, #{isQues3}, #{countQues})
+	</insert>
+
+	<insert id="insertReg">
+		insert into studyreg
+		values (#{regID}, #{userID}, #{studyID}, #{ans1}, #{ans2}, #{ans3})
+	</insert>
+
+	<select id="get" resultType="com.study_management.domain.StudyDTO">
+		select * from studynotice
+		where studyID = #{studyID}
+	</select>
+
+	<select id="getListMember" resultType="com.study_management.domain.StudyMemDTO">
+		select userID, userName, dept, autho
+		from user INNER JOIN studymem
+		IN user.userID = studymem.userID
+		where sutdymem.studyID = #{studyID}
+	</select>
+
+	<select id="getListRegMember" resultType="com.study_management.domain.StudyRegDTO">
+		select userID, userName, dept, ans1, ans2, ans3
+		from user INNER JOIN studyreg
+		IN studyreg.studyID = #{studyID} AND user.userID = studyreg.userID
+	</select>
+
+	<delete id="deleteReg">
+		delete studyreg where regID = #{regID}
+	</delete>
+
+	<insert id="createMem">
+		insert into studymem
+		values (#{userID}, #{studyID}, #{studyAutho})
+	</insert>
+
+	<update id="updateAutho">
+
+	</update>
+</mapper>

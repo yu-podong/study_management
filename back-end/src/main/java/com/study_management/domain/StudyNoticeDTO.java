@@ -1,7 +1,13 @@
 package com.study_management.domain;
 
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 import oracle.sql.DATE;
 
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
 public class StudyNoticeDTO {
     private Integer noID;
     private Integer studyID;
