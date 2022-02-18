@@ -23,15 +23,17 @@ public class PlanMapperTests {
     @Test
     public void testGetList() {
 
+        log.info("=================================");
         mapper.getList().forEach(weeklyPlan -> log.info(weeklyPlan)); // log가 뜨지 않음
-    }
+        log.info("=================================");
 
+    }
 
     @Test
     public void testInsertWeekly() {
 
         WeeklyPlanDTO weeklyPlan = new WeeklyPlanDTO();
-        weeklyPlan.setPlanID(4444);
+        weeklyPlan.setPlanID(1111);
         weeklyPlan.setStudyID(1111);
         weeklyPlan.setContent("Test");
         weeklyPlan.setCheck(false);
@@ -50,14 +52,12 @@ public class PlanMapperTests {
         weeklyPlan.setCheck(false);
 
         mapper.insertSelectKeyWeekly(weeklyPlan);
-
         log.info(weeklyPlan);
     }
 
     @Test
     public void testRead() {
 
-        // 존재하는 게시글 번호
         WeeklyPlanDTO weeklyPlan = mapper.read(1111L);
 
         log.info(weeklyPlan);
@@ -73,7 +73,6 @@ public class PlanMapperTests {
     public void testUpdate() {
 
         WeeklyPlanDTO weeklyPlan = new WeeklyPlanDTO();
-        // 실행 전 존재하는 번호인지 확인
         weeklyPlan.setPlanID(1111);
         weeklyPlan.setStudyID(1111);
         weeklyPlan.setContent("updateTest");
@@ -82,9 +81,4 @@ public class PlanMapperTests {
         int count = mapper.update(weeklyPlan);
         log.info("UPDATE COUNT: " + count);
     }
-
-
-
-
-
 }

@@ -113,3 +113,7 @@ CREATE TABLE comment
     FOREIGN KEY (userID) REFERENCES user (userID),
     FOREIGN KEY (postID) REFERENCES post (postID)
 );
+
+ALTER TABLE weeklyPlan ADD date VARCHAR(10) NOT NULL;
+
+ALTER TABLE monthlyPlan ADD date VARCHAR(10) NOT NULL;
