@@ -13,6 +13,7 @@ public class WeeklyPlanDTO {
     private Integer studyID;
     private String content;
     private boolean isCheck;
+    private String date;
 
     // Constructure
 
@@ -30,6 +31,7 @@ public class WeeklyPlanDTO {
     public boolean getCheck() {
         return isCheck;
     }
+    public String getDate() { return date; }
 
     // Setter
     public void setStudyID(Integer studyID) {
@@ -44,4 +46,6 @@ public class WeeklyPlanDTO {
     public void setCheck(boolean check) {
         isCheck = check;
     }
+    public void setDate(String date) { this.date = date; }
+
 }

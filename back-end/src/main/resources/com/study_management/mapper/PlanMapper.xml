@@ -17,52 +17,39 @@
 	</select>
 
 	<insert id="insertWeekly">
-		insert into weeklyplan (planID,studyID,content,isCheck)
-		values (seq_planID.nextval, #{studyID}, #{content}, #{isCheck})
+		insert into weeklyplan (studyID,content,isCheck,date)
+		values (#{studyID}, #{content}, #{isCheck}, #{date})
 	</insert>
 
 	<insert id="insertMonthly">
-		insert into monthlyplan (planID,studyID,content,isCheck)
-		values (seq_planID.nextval, #{studyID}, #{content}, #{isCheck})
+		insert into monthlyplan (studyID,content,isCheck,date)
+		values (#{studyID}, #{content}, #{isCheck}, #{date})
 	</insert>
 
-
-	<insert id="insertSelectKeyWeekly"> <!-- 별도의 PK값등을 얻기 위해서 사용 -->
-
-		<selectKey keyProperty="planID" order="BEFORE"
-				   resultType="long">
-			select seq_planID.nextval from dual
-		</selectKey>
-
-		insert into weeklyplan (planID,studyID,content,isCheck)
-		values (#{planID},#{studyID}, #{content}, #{isCheck})
-	</insert>
-
-	<insert id="insertSelectKeyMonthly"> <!-- 별도의 PK값등을 얻기 위해서 사용 -->
-
-		<selectKey keyProperty="planID" order="BEFORE"
-				   resultType="long">
-			select seq_planID.nextval from dual
-		</selectKey>
-
-		insert into monthlyplan (planID,studyID,content,isCheck)
-		values (#{planID},#{studyID}, #{content}, #{isCheck})
-	</insert>
-
-	<select id="read" resultType="com.study_management.domain.WeeklyPlanDTO">
-		select * from weeklyplan where studyID = #{studyID}
+	<select id="readWeekly" resultType="com.study_management.domain.WeeklyPlanDTO">
+		select * from weeklyplan where planID = #{planID}
 	</select>
 
-	<delete id="delete">
-		delete weeklyplan where studyID = #{studyID}
+	<select id="readMonthly" resultType="com.study_management.domain.WeeklyPlanDTO">
+		select * from monthlyplan where planID = #{planID}
+	</select>
+
+	<delete id="deleteWeekly">
+		delete from weeklyplan where planID = #{planID}
 	</delete>
 
-	<update id="update">
+	<delete id="deleteMonthly">
+		delete from monthlyplan where planID = #{planID}
+	</delete>
+
+	<update id="updateWeekly">
 		update weeklyplan
-		set content = #{content},
-			isCheck = #{isCheck}
-		where studyID= #{studyID},
+		set content = #{content}, isCheck = #{isCheck} where planID = #{planID}
 	</update>
 
+	<update id="updateMonthly">
+		update monthlyplan
+		set content = #{content}, isCheck = #{isCheck} where planID = #{planID}
+	</update>
 
 </mapper>

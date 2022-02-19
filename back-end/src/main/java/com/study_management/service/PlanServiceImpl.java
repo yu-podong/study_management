@@ -1,5 +1,6 @@
 package com.study_management.service;
 
+import com.study_management.domain.MonthlyPlanDTO;
 import com.study_management.domain.WeeklyPlanDTO;
 import com.study_management.mapper.PlanMapper;
 import lombok.AllArgsConstructor;
@@ -16,41 +17,79 @@ public class PlanServiceImpl implements PlanService{
     private PlanMapper mapper;
 
     @Override
-    public void register(WeeklyPlanDTO weeklyPlan) {
+    public void registerWeekly(WeeklyPlanDTO weeklyPlan) {
 
         log.info("writing plan......" + weeklyPlan);
 
-        mapper.insertSelectKeyWeekly(weeklyPlan);
+        mapper.insertWeekly(weeklyPlan);
     }
 
     @Override
-    public WeeklyPlanDTO get(Long planID) {
+    public void registerMonthly(MonthlyPlanDTO monthlyPlan) {
+
+        log.info("writing plan......" + monthlyPlan);
+
+        mapper.insertMonthly(monthlyPlan);
+    }
+
+    @Override
+    public WeeklyPlanDTO getWeekly(Long planID) {
 
         log.info("get......" + planID);
 
-        return mapper.read(planID);
+        return mapper.readWeekly(planID);
     }
 
     @Override
-    public boolean modify(WeeklyPlanDTO weeklyPlan) {
+    public MonthlyPlanDTO getMonthly(Long planID) {
+
+        log.info("get......" + planID);
+
+        return mapper.readMonthly(planID);
+    }
+
+    @Override
+    public boolean modifyWeekly(WeeklyPlanDTO weeklyPlan) {
 
         log.info("modify......" + weeklyPlan);
 
-        return mapper.update(weeklyPlan) == 1;
+        return mapper.updateWeekly(weeklyPlan) == 1;
     }
 
     @Override
-    public boolean remove(Long planID) {
+    public boolean modifyMonthly(MonthlyPlanDTO monthlyPlan) {
+
+        log.info("modify......" + monthlyPlan);
+
+        return mapper.updateMonthly(monthlyPlan) == 1;
+    }
+
+    @Override
+    public boolean removeWeekly(Long planID) {
 
         log.info("remove...." + planID);
 
-        return mapper.delete(planID) == 1;
+        return mapper.deleteWeekly(planID) == 1;
     }
 
     @Override
-    public List<WeeklyPlanDTO> getList() {
+    public boolean removeMonthly(Long planID) {
 
-        return mapper.getList();
+        log.info("remove...." + planID);
+
+        return mapper.deleteWeekly(planID) == 1;
+    }
+
+    @Override
+    public List<WeeklyPlanDTO> getWeeklyList() {
+
+        return mapper.getWeeklyList();
+    }
+
+    @Override
+    public List<MonthlyPlanDTO> getMonthlyList() {
+
+        return mapper.getMonthlyList();
     }
 }
 
