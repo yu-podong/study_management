@@ -8,84 +8,86 @@
 	</select>
 	
 	
-	
-	
-	
-	
-	
-	
-	<select id ="commentListGet" resultType="com.study_management.domain.CommentDTO">
-			select * from map where postId =
-			#{postId}
-	</select>
-	
-	
-	
-	<select id="commentInsert" resultType="com.study_management.domain.CommentDTO">
-
-		insert into map ( name, addres)
-		values (#{name},#{addres});
-
-	</select>
-	
-	<select id="commentDelete" resultType="com.study_management.domain.CommentDTO">
-
-		DELETE FROM map WHERE id =
-		#{id}
-
-	</select>
-	
-	
-	<select id="commentUpdate" resultType="com.study_management.domain.CommentDTO">
-
-		 UPDATE map SET name = #{name}, addres =#{addres} WHERE id = #{id};
-
+	<select id ="PostListVOGet" resultType="com.study_management.domain.PostListVO">
+			SELECT post.postID,post.title, post.date,post.viewCnt,post.comCnt,user.userName FROM post join user
+			ON ( post.userID =  user.userID) WHERE studyID=
+			#{studyID}
 	</select>
 	
 	
 	
 	
-	
-	
-	
-	
-	
-
-	
-	<select id ="postListGet" resultType="com.study_management.domain.PostDTO">
-			select * from map where id =
-			#{id}
+	<select id ="PostVOGet" resultType="com.study_management.domain.PostVO">
+			SELECT post.postID,post.title, post.date,post.viewCnt,post.comCnt,post.content,user.userName FROM post join user
+			ON ( post.userID =  user.userID) where postID= 
+			#{postID};
+			
 	</select>
 	
 	
-	<select id="postSelect" resultType="com.study_management.domain.PostDTO">
-
-			select * from map where id =
-			#{id}
-
-	</select>
-	
-	<select id="postInsert" resultType="com.study_management.domain.PostDTO">
-
-		insert into map ( name, addres)
-		values (#{name},#{addres});
-
-	</select>
-	
-	<select id="postDelete" resultType="com.study_management.domain.PostDTO">
-
-		DELETE FROM map WHERE id =
-		#{id}
-
+	<select id ="CommentVOGet" resultType="com.study_management.domain.CommentVO">
+			SELECT comment.comID, comment.date,comment.content,user.userName FROM comment join user
+			ON ( comment.userID =  user.userID)  where postID= 
+			#{postID}
 	</select>
 	
 	
-	<select id="postUpdate" resultType="com.study_management.domain.PostDTO">
-
-		 UPDATE map SET name = #{name}, addres =#{addres} WHERE id = #{id};
+	<select id ="PostDTOInsert" resultType="com.study_management.domain.PostDTO">
+			insert into post (studyID,userID,title,date,content)
+			values (#{studyID},#{userID},#{title},now(),#{content});
 
 	</select>
 	
+	<select id ="CommentDTOInsert" resultType="com.study_management.domain.CommentDTO">
+			insert into comment (userID,postID,date,content)
+			values (#{userID},#{postID},now(),#{content});
+
+	</select>
+	
+	<select id="PostDTODelete" >
+
+		DELETE FROM post WHERE postID =
+		#{postID}
+
+	</select>
+	
+		<select id="CommentDTODelete" >
+
+		DELETE FROM comment WHERE comID =
+		#{comID}
+
+	</select>
+	
+	
+		<select id="PostDTOUpdate" >
+		
+		update post set title= #{title},content=#{content} WHERE postID= #{postID};
+	</select>
+	
+		<select id="CommentDTOUpdate">
+		
+		update comment set content=#{content} WHERE comID= #{comID};
+	</select>
+	
+		<select id="PostViewCntUpdate" >
+		
+		update post set viewCnt = viewCnt+1  where postID= #{postID};
+	</select>
+	
+	<select id="ComCntUpdate">
+		
+		update post set comCnt = comCnt+1  where postID= #{postID};
+	</select>
+	
+		<select id="ComCntDecrease">
+		
+		update post set comCnt = comCnt-1  where postID= #{postID};
+	</select>
+	
+			<select id="AllCommentDelete">
+		
+		DELETE FROM comment WHERE postID =#{postID};
+	</select>
 	
 	
 	
