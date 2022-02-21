@@ -3,7 +3,92 @@
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.study_management.mapper.CommuMapper">
-	<!--
-		do something...
-	-->
+	<select id ="getTime2" resultType="String">
+		select now();
+	</select>
+	
+	
+	<select id ="PostListVOGet" resultType="com.study_management.domain.PostListVO">
+			SELECT post.postID,post.title, post.date,post.viewCnt,post.comCnt,user.userName FROM post join user
+			ON ( post.userID =  user.userID) WHERE studyID=
+			#{studyID}
+	</select>
+	
+	
+	
+	
+	<select id ="PostVOGet" resultType="com.study_management.domain.PostVO">
+			SELECT post.postID,post.title, post.date,post.viewCnt,post.comCnt,post.content,user.userName FROM post join user
+			ON ( post.userID =  user.userID) where postID= 
+			#{postID};
+			
+	</select>
+	
+	
+	<select id ="CommentVOGet" resultType="com.study_management.domain.CommentVO">
+			SELECT comment.comID, comment.date,comment.content,user.userName FROM comment join user
+			ON ( comment.userID =  user.userID)  where postID= 
+			#{postID}
+	</select>
+	
+	
+	<select id ="PostDTOInsert" resultType="com.study_management.domain.PostDTO">
+			insert into post (studyID,userID,title,date,content)
+			values (#{studyID},#{userID},#{title},now(),#{content});
+
+	</select>
+	
+	<select id ="CommentDTOInsert" resultType="com.study_management.domain.CommentDTO">
+			insert into comment (userID,postID,date,content)
+			values (#{userID},#{postID},now(),#{content});
+
+	</select>
+	
+	<select id="PostDTODelete" >
+
+		DELETE FROM post WHERE postID =
+		#{postID}
+
+	</select>
+	
+		<select id="CommentDTODelete" >
+
+		DELETE FROM comment WHERE comID =
+		#{comID}
+
+	</select>
+	
+	
+		<select id="PostDTOUpdate" >
+		
+		update post set title= #{title},content=#{content} WHERE postID= #{postID};
+	</select>
+	
+		<select id="CommentDTOUpdate">
+		
+		update comment set content=#{content} WHERE comID= #{comID};
+	</select>
+	
+		<select id="PostViewCntUpdate" >
+		
+		update post set viewCnt = viewCnt+1  where postID= #{postID};
+	</select>
+	
+	<select id="ComCntUpdate">
+		
+		update post set comCnt = comCnt+1  where postID= #{postID};
+	</select>
+	
+		<select id="ComCntDecrease">
+		
+		update post set comCnt = comCnt-1  where postID= #{postID};
+	</select>
+	
+			<select id="AllCommentDelete">
+		
+		DELETE FROM comment WHERE postID =#{postID};
+	</select>
+	
+	
+	
 </mapper>
