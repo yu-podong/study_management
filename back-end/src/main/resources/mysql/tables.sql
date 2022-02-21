@@ -2,10 +2,10 @@
 
 CREATE TABLE user
 (
-    userID    INTEGER,
+    userID    INTEGER NOT NULL AUTO_INCREMENT,
     userName  VARCHAR(10) NOT NULL,
     gender    INTEGER CHECK (gender > 0),
-    userTel   VARCHAR(10) NOT NULL,
+    userTel   VARCHAR(11) NOT NULL,
     userEmail VARCHAR(50) NOT NULL,
     userNum   INTEGER,
     password  VARCHAR(50) NOT NULL,
@@ -15,6 +15,9 @@ CREATE TABLE user
     autho     INTEGER DEFAULT 4 CHECK (autho > 0),
     PRIMARY KEY (userID)
 );
+set SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
+
+
 
 CREATE TABLE study
 (
