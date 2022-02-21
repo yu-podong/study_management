@@ -17,8 +17,6 @@ import com.study_management.domain.PostDTO;
 import com.study_management.domain.PostListVO;
 import com.study_management.domain.PostVO;
 import com.study_management.mapper.CommuMapper;
-import com.study_management.mapper.Test2Mapper;
-import com.study_management.mapper.TestMapper;
 
 import lombok.AllArgsConstructor;
 import lombok.extern.log4j.Log4j;
