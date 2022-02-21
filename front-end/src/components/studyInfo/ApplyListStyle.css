@@ -1,0 +1,73 @@
+.apply-list-component {
+	width: 40%;
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+	align-items: flex-start;
+	padding: 0px 30px;
+	box-sizing: border-box;
+}
+
+.apply-list-component  .apply-list {
+	flex: 1;
+	overflow-y: scroll;
+	font-size: 17px;
+}
+
+.apply-list-component  .apply-list > li {
+	border-bottom: 1px solid var(--grey-color);
+	margin-bottom: 30px;
+}
+
+.apply-list-component  .apply-list div {
+	display: flex;
+	flex-direction: row;
+	justify-content: flex-start;
+}
+
+.apply-list-component  .apply-list .user-info svg {
+	height: 1.3em;
+	color: var(--dark-grey-color);
+}
+
+.apply-list-component  .apply-list .user-info > span {
+	margin-left: 10px;
+}
+
+.apply-list-component .apply-list p {
+	text-align: start;
+	color: var(--grey-color);
+}
+
+.apply-list-component .apply-list .content {
+	align-items: flex-end;
+}
+
+.apply-list-component .apply-list .content .btn-list {
+	height: fit-content;
+	flex-direction: row;
+	margin-bottom: 17px;
+	margin-right:10px;
+}
+
+.apply-list-component .apply-list .content .btn-list > li {
+	padding: 5px 10px;
+	margin-left: 10px;
+	cursor: pointer;
+}
+
+.apply-list-component .apply-list .content .btn-list .yes {
+	background-color: var(--mint-color);
+}
+
+.apply-list-component .apply-list .content .btn-list .yes:hover {
+	background-color: var(--turquoise-color);
+}
+.apply-list-component .apply-list .content .btn-list .no {
+	background-color: var(--grey-color);
+}
+
+.apply-list-component .apply-list .content .btn-list .no:hover {
+	background-color: var(--dark-grey-color);
+}

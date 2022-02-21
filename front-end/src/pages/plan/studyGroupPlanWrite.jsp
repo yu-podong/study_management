@@ -42,83 +42,9 @@
 			</div>
 		
 			<div class="plan-write-form"> <!-- table 하단-->
-			    <div class="study-weekly-plan">
-			        <div class="plan-title">Weekly</div>
-			            <div class="detail-weekly-plan">
-			                <div class="plan-pre-btn">
-			                    <i class="fas fa-chevron-up"></i>
-			                </div>
-			                <div class="plan-date">
-			                    <p>1월 1주차<p>
-			                </div>
-			                <div class="check-list">
-			                    <ul>
-			           	            <li>
-			           		            <input type="checkbox" class="checkbox">
-			           		            <input type="text" class="text">
-			           	            </li>
-			           	            <li>
-			           		            <input type="checkbox" class="checkbox">
-			           		            <input type="text" class="text">
-			           	            </li>
-			           	            <li>
-			           		            <input type="checkbox" class="checkbox">
-			           		            <input type="text" class="text">
-			           	            </li>
-			           	            <li>
-			           		            <input type="checkbox" class="checkbox">
-			           		            <input type="text" class="text">
-			           	            </li>
-			           	            <li>
-			           		            <input type="checkbox" class="checkbox">
-			           		            <input type="text" class="text">
-			           	            </li>
-			                    </ul>
-			                </div>
-			                <div class="plan-add">내용 추가+</div>
-			                <div class="plan-aft-btn">	               
-	                      	    <i class="fas fa-chevron-down"></i>
-			               </div>
-			            </div>
-			    </div>
+			    
 			   
-			    <div class="study-monthly-plan">
-			        <div class="plan-title">Monthly</div>
-			            <div class="plan-pre-btn">
-			                <i class="fas fa-chevron-up"></i>
-			            </div>
-			            <div class="plan-date">
-			                <p>1월</p>
-			            </div>
-			            <div class="check-list">
-			                <ul>
-			           	        <li>
-			           		        <input type="checkbox" class="checkbox">
-			           		        <input type="text" class="text">
-			           	        </li>
-			           	        <li>
-			           		        <input type="checkbox" class="checkbox">
-			           		        <input type="text" class="text">
-			           	        </li>
-			           	        <li>
-			           		        <input type="checkbox" class="checkbox">
-			           		        <input type="text" class="text">
-			           	        </li>
-			           	        <li>
-			           		        <input type="checkbox" class="checkbox">
-			           		        <input type="text" class="text">
-			           	        </li>
-			           	        <li>
-			           		        <input type="checkbox" class="checkbox">
-			           		        <input type="text" class="text">
-			           	        </li>
-			                </ul>
-			            </div>
-			            <div class="plan-add">내용 추가+</div>
-			            <div class="plan-aft-btn">
-			                <i class="fas fa-chevron-down"></i>
-			           </div>
-			   </div>
+			    
 			</div>
 		</div>
 	</section>

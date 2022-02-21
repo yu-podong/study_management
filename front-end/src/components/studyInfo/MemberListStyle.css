@@ -1,0 +1,61 @@
+.member-list-component {
+	width: 60%;
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	padding: 0px 60px;
+	box-sizing: border-box;
+	border-right: 1px solid var(--grey-color);
+}
+
+.member-list-component .title,
+.apply-list-component .title {
+	display: inline-block;
+	font-size: 20px;
+	margin-bottom: 20px;
+}
+
+.member-list-component .member-list {
+	width: 100%;
+	height: 100%;
+	overflow-y: scroll;
+}
+
+.member-list-component .member-list li {
+	width: 100%;
+	height: 50px;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-evenly;
+	align-items: center;
+	font-size: 17px;
+	border-bottom: 1px solid var(--grey-color);
+}
+
+.member-list-component .member-list li svg {
+	height: 1.5em;
+	color: var(--dark-grey-color);
+}
+
+.member-list-component .member-list li span:nth-child(2) {
+	width:15%;
+}
+
+.member-list-component .member-list li span:nth-child(3),
+.member-list-component .member-list li span:nth-child(5) {
+	width: 10%;
+	font-weight: bold;
+}
+
+.member-list-component .member-list li span:nth-child(4) {
+	width: 30%;
+}
+
+.member-list-component .member-list .master {
+	color: var(--orange-color);
+}
+
+.member-list-component .member-list .member {
+	color: var(--green-color);
+}

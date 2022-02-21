@@ -10,8 +10,8 @@
 
 	<insert id="create">
 		insert into study
-		values (#{studyID}, #{studyName}, #{simpleName}, #{detail}, #{recomGra},
-		        #{maxMem}, #{time}, #{isGrant}, #{isQues1}, #{isQues2}, #{isQues3}, #{countQues})
+		values (#{studyID}, #{studyName}, #{simpleDesc}, #{detail}, #{recomGra},
+		        #{maxMem}, #{time}, #{isGrant}, #{isQues1}, #{isQues2}, #{isQues3}, #{addQues}, #{countQues})
 	</insert>
 
 	<insert id="insertReg">

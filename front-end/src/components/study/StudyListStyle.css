@@ -1,0 +1,43 @@
+.study-list-component {
+	width: 65%; 
+	height: 100%;
+}
+
+.study-list-component .list-template {
+	width: 100%;
+	height: 100%;
+}
+
+.list-template {
+	display: flex;
+	flex-direction: column;
+}
+
+.list-template > li:not(.list-template .head)  {
+	width: 100%;
+	height: 50px;
+	border: 1px solid var(--grey-color);
+	border-radius: 50px;
+	margin-bottom: 20px;
+}
+
+.list-template > li.head {
+	width: 100%;
+	margin-bottom: 20px;
+}
+
+.list-template > li > ul {
+	width: 100%;
+	height: 100%;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-around;
+	align-items: center;
+}
+
+.list-template .apply-btn {
+	font-size: 13px;
+	padding: 5px 10px;
+	background-color: var(--grey-color);
+	cursor: pointer;
+}

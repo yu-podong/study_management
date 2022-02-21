@@ -1,0 +1,88 @@
+.commu-read-component {
+	width: 100%;
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+	padding: 0px 70px;
+	box-sizing: border-box;
+	text-align: start;
+	overflow-y: scroll;
+}
+
+.commu-read-component .title {
+	font-size: 30px;
+}
+
+.commu-read-component .detail-info {
+	display: flex;
+	margin-top: 10px;
+	padding-bottom: 20px;
+	flex-direction: row;
+	justify-content: space-between;
+	font-size:20px;
+	border-bottom: 1px solid var(--grey-color);
+}
+
+.commu-read-component .detail-info span:not(.commu-read-component .date) {
+	margin-left: 20px;
+}
+
+.commu-read-component .markdown-viewer {
+	padding: 20px;
+	margin-bottom: 20px;
+	box-sizing: border-box;
+	border-bottom: 1px solid var(--grey-color);
+}
+
+.commu-read-component .markdown-viewer p {
+	font-size: 17px;
+}
+
+.commu-read-component .comment-list li {
+	margin-bottom: 15px;
+}
+
+.commu-read-component .comment-list span:nth-child(1) {
+	display: inline-block;
+	margin-right: 10px;
+	font-weight: bold;
+}
+
+.commu-read-component .comment-list span:nth-child(2) {
+	font-size: 13px;
+	color: var(--grey-color);
+}
+
+.commu-read-component .comment-list li > p {
+	margin-top: 5px;
+	margin-bottom: 5px;
+}
+
+.commu-read-component form {
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	align-items: flex-end;
+}
+
+.commu-read-component input {
+	position: relative;
+	width: 100%;
+	padding: 10px 20px;
+	box-sizing: border-box;
+	border-radius: 50px;
+	border: 1px solid var(--grey-color);
+	outline: none;
+	font-size: 16px;
+}
+
+.commu-read-component label {
+	position: relative;
+	top: -28px;
+	left: -30px;
+	cursor: pointer;
+}
+
+.commu-read-component svg:hover {
+	color: var(--turquoise-color);
+}
