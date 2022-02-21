@@ -1,0 +1,61 @@
+.apply-form {
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+	align-items: flex-end;
+	overflow-y: scroll;
+}
+
+.apply-form * {
+	width: 100%;
+	text-align: start;
+}
+
+.apply-form .study-name {
+	font-size: 25px;
+	margin-bottom: 20px;
+}
+
+.apply-form .desc {
+	line-height: 30px;
+}
+
+.apply-form ul {
+	width: 97%;
+	font-size: 20px;
+	list-style-type: disc;
+	margin-top: 40px;
+	margin-left: 50px;
+}
+
+.apply-form ul li {
+	margin-bottom: 30px;
+}
+
+.apply-form ul li span {
+	width: fit-content;
+	display: block;
+	margin-bottom: 10px;
+}
+
+.apply-form ul li textarea {
+	width: 900px;
+	height: 120px;
+	padding: 15px;
+	font-size: 17px;
+	border: 1px solid var(--grey-color);
+	border-radius: 10px;
+	outline: none;
+	box-sizing: border-box;
+	resize: none;
+}
+
+.apply-form input[type="submit"] {
+	width: fit-content;
+	font-size: 17px;
+	border: none;
+	background-color: var(--mint-color);
+	padding: 10px 20px;
+	cursor: pointer;
+}

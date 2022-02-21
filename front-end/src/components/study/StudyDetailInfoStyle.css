@@ -1,0 +1,71 @@
+.detail-part {
+	width: 35%;
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+	align-items: center;
+	padding: 20px;
+	box-sizing: border-box;
+	overflow-y: scroll;
+}
+
+.detail-part::-webkit-scrollbar {
+	width:5px;
+}
+
+.detail-part::-webkit-scrollbar-thumb {
+	border-radius: 10px;
+	background-color: var(--grey-color);
+}
+
+.detail-part .study-name {
+	font-size: 25px;
+	font-weight: bold;
+	margin-bottom: 20px;
+}
+
+.detail-part ul {
+	width: 100%;
+	height: fit-content;
+	display: flex;
+	margin-top: 70px;
+}
+
+.detail-part ul > li {
+	width: fit-content;
+	margin-bottom: 20px;
+}
+
+.detail-part .detail-info {
+	width: 100%;
+	height: fit-content;
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+	margin-top: 30px;
+	text-align: start;
+}
+
+.detail-part .detail-info span {
+	font-size: 18px;
+	font-weight: bold;
+	margin-bottom: 5px;
+}
+
+.detail-part .markdown-viewer {
+	width: 100%;
+	height: fit-content;
+}
+
+.detail-part .markdown-viewer code {
+	width: 100%;
+	text-align: start;
+}
+
+.detail-part .apply-btn {
+	width: fit-content;
+	margin-top: 20px;
+	padding: 10px 50px;
+	background-color: var(--mint-color);
+}

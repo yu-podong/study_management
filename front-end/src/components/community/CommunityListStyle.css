@@ -1,0 +1,75 @@
+.commu-list-component {
+	width: 100%;
+	height: 100%;
+	padding: 0px 70px;
+	box-sizing: border-box;
+}
+
+.commu-list-component .under_menu {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	margin-bottom: 60px;
+}
+
+.commu-list-component .explanation {
+	font-size: 20px;
+}
+
+.commu-list-component .menu_right {
+	flex-direction: row;
+}
+
+.commu-list-component .menu_right li:nth-child(2) {
+	flex-direction: column;
+	justify-content: center;
+	display: flex;
+	margin-left: 50px;
+}
+
+.commu-list-component .menu_right input {
+	padding: 5px 10px;
+	border: none;
+	border-bottom: 1px solid var(--grey-color);
+	outline: none;
+}
+
+.commu-list-component .list-template {
+	flex: 1;
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	overflow-y: scroll;
+	overflow-x: hidden;
+}
+
+.commu-list-component .list-template .rows a {
+	width: 100%;
+	height: 100%;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-around;
+}
+
+.commu-list-component .list-template > li > ul li {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.commu-list-component .list-template > li > ul li:nth-child(1) {
+	width: 15%;
+}
+
+.commu-list-component .list-template > li > ul li:nth-child(3) {
+	width: 20%;
+}
+
+.commu-list-component .list-template > li > ul li:nth-child(4),
+.commu-list-component .list-template > li > ul li:nth-child(5) {
+	width: 10%;
+}
+
+.commu-list-component .list-template > li > ul li:nth-child(2) {
+	width: 40%;
+}

@@ -1,0 +1,47 @@
+.plan-template {
+	width: 100%;
+}
+
+.plan-template .date {
+	font-size: 20px;
+	padding-bottom: 15px;
+	border-bottom: 1px solid var(--turquoise-color);
+}
+
+.plan-template .check-list li {
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+	margin-bottom: 15px;
+}
+
+.plan-template input[type="checkbox"] {
+	display: none;
+}
+
+.plan-template label {
+	display: inline-block;
+	width: 20px;
+	height: 20px;
+	margin-right: 10px;
+	cursor: pointer;
+	background-color: var(--grey-color);
+}
+
+.plan-template input[type="text"] {
+	width: 250px;
+	padding: 5px 10px;
+	font-size: 17px;
+	border: none;
+	border-bottom: 1px solid var(--grey-color);
+	outline: none;
+}
+
+.plan-template input:checked + label {
+	background-color: var(--mint-color);
+}
+
+.study-monthly-plan {
+	margin-top: 50px;
+}

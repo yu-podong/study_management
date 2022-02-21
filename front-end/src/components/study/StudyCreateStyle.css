@@ -1,0 +1,148 @@
+.study-create .second {
+	overflow-y: scroll;
+}
+
+.study-create .second::-webkit-scrollbar {
+	width:5px;
+}
+
+.study-create .second::-webkit-scrollbar-thumb {
+	border-radius: 10px;
+	background-color: var(--grey-color);
+}
+
+.create-form {
+	width: 100%;
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+	align-items: flex-end;
+}
+
+.create-form .first-part,
+.create-form .second-part,
+.create-form .third-part {
+	width: 100%;
+}
+
+.create-form .title {
+	font-size: 20px;
+	text-align: start;
+}
+
+.create-form .first-part li {
+	margin-top: 15px;
+	width: fit-content;
+	height: 40px;
+}
+
+.create-form .first-part input {
+	height: 100%;
+	padding: 10px 20px;
+	box-sizing: border-box;
+	border: 1px solid var(--grey-color);
+	border-radius: 20px;
+	outline: none;
+}
+
+.create-form .first-part #simpleDesc {
+	width: 700px;
+}
+
+.create-form .second-part {
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+	margin-top: 70px;
+}
+
+.create-form .second-part textarea {
+	width: 700px;
+	height: 320px;
+	margin-top: 15px;
+	padding: 10px 20px;
+	border: 1px solid var(--grey-color);
+	border-radius: 10px;
+	resize: none;
+}
+
+.create-form .second-part ul {
+	list-style-type: disc;
+	width: fit-content;
+	flex-direction: row;
+	justify-content: flex-start;
+	margin-top: 20px;
+}
+
+.create-form .second-part ul li {
+	height: 40px;
+	margin-left: 70px;
+}
+
+.create-form .second-part ul li span {
+	margin-right: 15px;
+}
+
+.create-form .second-part select {
+	width: 70px;
+	height: 40px;
+	padding: 0px 5px;
+	box-sizing: border-box;
+	border: 1px solid var(--grey-color);
+	border-radius: 10px;
+	outline: none;
+}
+
+.create-form .second-part input {
+	width: 70px;
+	height: 40px;
+	text-align: center;
+	padding: 0px 5px;
+	box-sizing: border-box;
+	border: 1px solid var(--grey-color);
+	border-radius: 10px;
+	outline: none;
+}
+
+.create-form .third-part {
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+	margin-top: 70px;
+}
+
+.create-form .third-part * {
+	width: fit-content;
+}
+
+.create-form .third-part span:nth-child(2) {
+	margin-top: 10px;
+	color: var(--turquoise-color);
+}
+
+.create-form .question-list {
+	margin-top: 20px;
+	margin-left: 30px;
+}
+
+.create-form .question-list li {
+	margin-bottom: 10px;
+}
+
+.create-form .question-list input {
+	margin-right: 10px;
+}
+
+.create-form input[type="submit"] {
+	font-size: 18px;
+	padding: 10px 20px;
+	border: none;
+	border-radius: 10px;
+	background-color: var(--mint-color);
+	cursor: pointer;
+}
+
+.create-form input[type="submit"]:hover {
+	background-color:  var(--turquoise-color);
+}
