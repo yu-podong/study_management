@@ -8,19 +8,19 @@ import java.util.List;
 
 public interface PlanMapper {
 
-    public List<WeeklyPlanDTO> getWeeklyList();
-    public List<MonthlyPlanDTO> getMonthlyList();
+    public List<WeeklyPlanDTO> WeeklyPlanDTOGet(int studyID);
+    public List<MonthlyPlanDTO> MonthlyPlanDTOGet(int studyID);
 
     public void insertWeekly(WeeklyPlanDTO weeklyPlan);
     public void insertMonthly(MonthlyPlanDTO monthlyPlan);
 
-    public WeeklyPlanDTO readWeekly(Long planID);
-    public MonthlyPlanDTO readMonthly(Long planID);
+    public void updateWeekly(WeeklyPlanDTO weeklyPlan);
+    public void updateMonthly(MonthlyPlanDTO monthlyPlan);
 
-    public int updateWeekly(WeeklyPlanDTO weeklyPlan);
-    public int updateMonthly(MonthlyPlanDTO monthlyPlan);
+    public void deleteWeekly(int planID);
+    public void deleteMonthly(int planID);
 
-    public int deleteWeekly(Long planID);
-    public int deleteMonthly(Long planID);
+    public void isCheckWeekly(WeeklyPlanDTO weeklyPlan);
+    public void isCheckMonthly(MonthlyPlanDTO monthlyPlan);
 
 }
