@@ -13,7 +13,7 @@
     <annotation-driven/>
 
     <!-- Component Scan 패키지 설정 -->
-    <context:component-scan base-package="com.study_management.controller"/>
+    <context:component-scan base-package="com.study_management.controller" />
 
     <!-- 뷰 prefix, suffix 설정 -->
     <!-- view 페이지로 넘겨주는 친구 -->
