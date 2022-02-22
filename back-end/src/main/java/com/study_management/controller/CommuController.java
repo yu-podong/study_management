@@ -17,6 +17,8 @@ import com.study_management.domain.PostDTO;
 import com.study_management.domain.PostListVO;
 import com.study_management.domain.PostVO;
 import com.study_management.mapper.CommuMapper;
+import com.study_management.mapper.Test2Mapper;
+import com.study_management.mapper.TestMapper;
 
 import lombok.AllArgsConstructor;
 import lombok.extern.log4j.Log4j;
@@ -54,6 +56,8 @@ public class CommuController {
 		PostVO Post = CommuMapper.PostVOGet(postID);
 		log.info("PostViewCntUpdate: " + postID);
 		CommuMapper.PostViewCntUpdate(postID);
+		log.info("list: "+postID);
+		Post.setCommentList(CommuMapper.CommentVOGet(postID));
 		System.out.println("=====================================");
 		return Post;
 	}
@@ -64,7 +68,6 @@ public class CommuController {
 	public List<CommentVO> CommentGet(@PathVariable("postID") int postID) {
 		System.out.println("1=====================================");
 		log.info("list: "+postID);
-		
 		List<CommentVO> CommentList = CommuMapper.CommentVOGet(postID);
 		System.out.println("=====================================");
 		return CommentList;
