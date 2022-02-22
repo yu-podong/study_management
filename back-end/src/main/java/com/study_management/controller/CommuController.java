@@ -1,5 +1,6 @@
 package com.study_management.controller;
 
+import java.util.Arrays;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,8 +18,6 @@ import com.study_management.domain.PostDTO;
 import com.study_management.domain.PostListVO;
 import com.study_management.domain.PostVO;
 import com.study_management.mapper.CommuMapper;
-import com.study_management.mapper.Test2Mapper;
-import com.study_management.mapper.TestMapper;
 
 import lombok.AllArgsConstructor;
 import lombok.extern.log4j.Log4j;
@@ -36,7 +35,14 @@ public class CommuController {
 	
 
 	//=======================================<<보기>>===========================================
-	
+	//질문 리스트 보기
+	@GetMapping("/hello")
+	public List<String> Hello() {
+			System.out.println("1=====================================");
+
+			return Arrays.asList("서버포트 8080","리액트포트 3000");
+		}
+
 	//질문 리스트 보기
 	@GetMapping(value = "/list/{studyID}", produces = {MediaType.APPLICATION_JSON_UTF8_VALUE})
 	public List<PostListVO> PostListGet(@PathVariable("studyID") int studyID) {
@@ -56,8 +62,6 @@ public class CommuController {
 		PostVO Post = CommuMapper.PostVOGet(postID);
 		log.info("PostViewCntUpdate: " + postID);
 		CommuMapper.PostViewCntUpdate(postID);
-		log.info("list: "+postID);
-		Post.setCommentList(CommuMapper.CommentVOGet(postID));
 		System.out.println("=====================================");
 		return Post;
 	}
@@ -68,6 +72,7 @@ public class CommuController {
 	public List<CommentVO> CommentGet(@PathVariable("postID") int postID) {
 		System.out.println("1=====================================");
 		log.info("list: "+postID);
+		
 		List<CommentVO> CommentList = CommuMapper.CommentVOGet(postID);
 		System.out.println("=====================================");
 		return CommentList;
