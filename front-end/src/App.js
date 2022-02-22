@@ -21,17 +21,6 @@ import './App.css';
 import './style/main.css';
 
 function App() {
-  // const [user, setUser] = useState("");
-  // useEffect(()=>{
-  //   Axios.get("/api/users").then((response)=>{
-  //     if(response.data) {
-  //       console.log(response.data)
-  //       setUser(response.data);
-  //     } else {
-  //       alert("failed to");
-  //     }
-  //   });
-  // }, []);
   return (
     <div className='App'>
       <Routes>
