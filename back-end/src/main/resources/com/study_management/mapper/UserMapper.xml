@@ -4,13 +4,13 @@
 		"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.study_management.mapper.UserMapper">
 
-	<update id = "modifyUserInfo">
+	<update id = "updateUserInfo">
 		UPDATE user
 		SET   grade = #{grade}, state = #{state}, userTel = #{userTel}
 		WHERE userID = #{userID}
 	</update>
 
-	<select id = "userDetail" resultType = "UserDTO">
+	<select id = "readUserInfo">
 		SELECT *
 		FROM user
 		WHERE userID=#{userID}
