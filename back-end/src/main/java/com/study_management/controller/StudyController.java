@@ -5,20 +5,24 @@ import com.study_management.service.StudyService;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.*;
 
-@Controller
-@RequestMapping("/study/*")
+import java.util.List;
+
+@RestController
+@RequestMapping("/study")
 @AllArgsConstructor
 public class StudyController {
     private StudyService service;
 
+    @ResponseBody
     @GetMapping("/list")
-    public void list(Model model) {
+    public List<StudyDTO> list(Model model) {
         // 등록된 스터디의 정보를 가져옴
-        model.addAttribute("studyList", service.getList());
+        // model.addAttribute("studyList", );
+        //test
+        System.out.println(service.getList());
+        return service.getList();
     }
 
     @PostMapping("/create")
