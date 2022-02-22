@@ -1,6 +1,7 @@
 package com.study_management.domain;
 
 import java.util.Date;
+import java.util.List;
 
 public class PostVO {
  	private Integer postID;
@@ -10,6 +11,7 @@ public class PostVO {
 	    private Integer comCnt;
 	    private String content;
 	    private String userName;
+	    private List<CommentVO> commentList;
 	    
 	    public Integer getPostID() {
 				return postID;
@@ -32,6 +34,9 @@ public class PostVO {
 			public String getUserName() {
 				return userName;
 			}
+			public List<CommentVO> getCommentList() {
+				return commentList;
+			}
 		 
 		    public void setPostID(Integer postID) {
 		        this.postID = postID;
@@ -53,5 +58,8 @@ public class PostVO {
 		    }
 		    public void setUserName(String userName) {
 		        this.userName = userName;
+		    }
+		    public void setCommentList(List<CommentVO> commentList) {
+		        this.commentList = commentList;
 		    }
 }
