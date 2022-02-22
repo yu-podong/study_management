@@ -25,21 +25,25 @@ public class UserDAOImpl implements UserDAO {
     public boolean login(UserDTO userDTO, HttpSession httpSession) throws Exception {
         String name = sql.selectOne(namespace + ".userLogin", userDTO);
         return (name == null) ? false : true;
-        //return name != null;
     }
 
     @Override
-    public void modifyUserInfo(UserDTO userDTO) throws Exception {
-        sql.update(namespace + ".userEdit", userDTO);
+    public void updateUserInfo(UserDTO userDTO) throws Exception {
+        sql.update(namespace + ".modifyUserInfo", userDTO);
     }
 
     @Override
-    public void modifyPassword(String userID, String password) throws Exception {
-        sql.update(namespace + ".modifyPassword", password);
+    public void updatePassword(UserDTO userDTO) throws Exception {
+        sql.update(namespace + ".updatePassword", userDTO);
     }
 
     @Override
-    public UserDTO viewUserInfo(String userID) throws Exception {
+    public UserDAO idCheck(Integer UserID) throws Exception {
+        return sql.selectOne(".idCheck", UserID);
+    }
+
+    @Override
+    public UserDTO readUserInfo(Integer userID) throws Exception {
         return sql.selectOne(namespace + ".viewUserInfo", userID);
     }
 

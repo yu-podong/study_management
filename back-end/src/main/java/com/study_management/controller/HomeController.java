@@ -20,13 +20,12 @@ import javax.servlet.http.HttpSession;
 @Controller
 @RequestMapping("/home/*")
 public class HomeController {
-@Autowired
-    //private static final Logger logger = LoggerFactory.getLogger(HomeController.class);
+    @Autowired
     private HomeService homeService;
 
     @Inject
     public HomeController(UserService userService) {
-        this.homeService=homeService;
+        this.homeService = homeService;
     }
 
     // 회원가입 페이지로 이동 get
@@ -47,7 +46,6 @@ public class HomeController {
     // 로그인 페이지로 이동 get
     @RequestMapping(value = "/login", method = RequestMethod.GET)
     public String getLogin() throws Exception {
-        //log.info("get login");
         return "/home/login";
     }
 
@@ -57,14 +55,41 @@ public class HomeController {
         boolean result = homeService.login(userDTO, httpSession);
         ModelAndView mav = new ModelAndView();
         if (result == true) {
-            mav.setViewName("redirect:/");
+            mav.setViewName("redirect:/study/mainpage");
         } else {
-            mav.setViewName("/user/UserLogin");
+            mav.setViewName("/home/login");
         }
         return mav;
-
-
     }
 
+    //로그아웃 버튼
+    @RequestMapping(value = "/logout", method = RequestMethod.GET)
+    public String logout(HttpSession session) throws Exception {
+        homeService.logout(session);
+        return "redirect:/home/login";
+    }
 
+    //임시 비밀번호 받기로 이동 get
+    //비밀번호 찾기로 이동 get
+    @RequestMapping(value = "/findpassword", method = RequestMethod.GET)
+    public void getFindPassword() throws Exception{
+    }
+
+    @RequestMapping(value = "/findpassword", method = RequestMethod.POST)
+    public void findPassword(@ModelAttribute UserDTO user, HttpServletResponse response) throws Exception{
+        homeService.findPassword(response, user);
+    }
+
+    // 비밀번호 찾기
+//    @RequestMapping("/updatepassword")
+//    public ModelAndView updatePassword(@ModelAttribute UserDTO userDTO) throws Exception {
+//        ModelAndView mav = new ModelAndView();
+//        String pw = homeService.updatePassword(userDTO);
+//        mav.setViewName("/home/updatepassword");
+//        mav.addObject("updatepassword", pw);
+//        return mav;
+//    }
 }
+
+
+
