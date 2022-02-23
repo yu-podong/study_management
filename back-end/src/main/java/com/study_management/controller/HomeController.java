@@ -18,7 +18,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 @Controller
-@RequestMapping("/home/*")
+@RequestMapping("/axios/*")
 public class HomeController {
     @Autowired
     private HomeService homeService;
@@ -65,7 +65,8 @@ public class HomeController {
     //로그아웃 버튼
     @RequestMapping(value = "/logout", method = RequestMethod.GET)
     public String logout(HttpSession session) throws Exception {
-        homeService.logout(session);
+        //homeService.logout(session);
+        session.invalidate();
         return "redirect:/home/login";
     }
 
@@ -74,10 +75,11 @@ public class HomeController {
     @RequestMapping(value = "/findpassword", method = RequestMethod.GET)
     public void getFindPassword() throws Exception{
     }
-
+    // 비밀번호 메일 발송
+    // 비밀번호 찾기로 이동 - 이름 학번 이메일 입력 - 이메일로 비밀번호 받기
     @RequestMapping(value = "/findpassword", method = RequestMethod.POST)
-    public void findPassword(@ModelAttribute UserDTO user, HttpServletResponse response) throws Exception{
-        homeService.findPassword(response, user);
+    public void findPassword(@ModelAttribute UserDTO userDTO, String div) throws Exception{
+        homeService.sendEmail(userDTO, div);
     }
 
     // 비밀번호 찾기

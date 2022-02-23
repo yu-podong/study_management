@@ -20,7 +20,13 @@
 		WHERE userNum = #{userNum} AND password = #{password}
 	</select>
 
-	<!--비밀번호 변경-->
+	<!--비밀번호 불러오기-->
+	<select id = "findPassword">
+    	SELECT password
+    	FROM user
+    	WHERE userName = #{userName} AND userNum = #{userNum} AND userEmail = #{userEmail}
+	</select>
+	<!--비밀번호 변경
 	<update id = "updatePassword">
 		/* UPDATE user
 		SET password = #{password}
@@ -31,7 +37,7 @@
 		update user
 		SET password = #{password}
 		WHERE userID = #{userID}
-	</update>
+	</update>-->
 
 	<select id="idCheck" resultType="_int">
 		SELECT count(*)

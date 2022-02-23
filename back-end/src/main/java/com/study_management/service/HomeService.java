@@ -17,11 +17,11 @@ public interface HomeService {
     // 비밀번호 이메일 발송
     public void sendEmail(UserDTO userDTO, String div) throws Exception;
     // 새 비밀번호 발급
-    public void findPassword(HttpServletResponse resp, UserDTO userDTO) throws Exception;
+   // public void findPassword(HttpServletResponse resp, UserDTO userDTO) throws Exception;
     //public void updatePassword(String userID, String password)(UserDTO userDTO) throws Exception;
     // 로그아웃
     public void logout(HttpSession session)throws Exception;
     // 아이디중복확인
-    public UserDAO idCheck(Integer UserID) throws Exception;
+    // public UserDAO idCheck(Integer UserID) throws Exception;
 
 }

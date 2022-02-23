@@ -33,14 +33,14 @@ public class UserDAOImpl implements UserDAO {
     }
 
     @Override
-    public void updatePassword(UserDTO userDTO) throws Exception {
+    public void findPassword(UserDTO userDTO) throws Exception {
         sql.update(namespace + ".updatePassword", userDTO);
     }
 
-    @Override
+    /*@Override
     public UserDAO idCheck(Integer UserID) throws Exception {
         return sql.selectOne(".idCheck", UserID);
-    }
+    }*/
 
     @Override
     public UserDTO readUserInfo(Integer userID) throws Exception {
