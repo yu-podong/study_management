@@ -28,7 +28,7 @@ public class PostVO {
 	public Integer getComCnt() {
 		return comCnt;
 	}
-	public String content() {
+	public String getContent() {
 		return content;
 	}
 	public String getUserName() {

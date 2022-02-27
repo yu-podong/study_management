@@ -20,7 +20,9 @@ public class CommentVO {
     public String getContent() {
         return content;
     }
-
+    public String getuserName() {
+        return userName;
+    }
     // Setter
     public void setComID(Integer comID) {
         this.comID = comID;
