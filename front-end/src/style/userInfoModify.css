@@ -6,48 +6,7 @@ html, body {
 	font-family: 'Roboto', sans-serif;
 }
 
-ul {
-	list-style: none;
-	padding: 0;
-	margin: 0;
-}
-
-.study-list {
-	 position : relative;
-	
-	width: 100%;
-	height: 100%;
-	display: flex;
-	flex-direction: row;
-	justify-content: flex-start;
-}
-
-.study-list .nav-bar {
-	width: 100px;
-	height: 100%;
-	display: flex;
-	flex-direction: column;
-	justify-content: flex-start;
-	align-items: center;
-	padding-top: 36px;
-	background-color: #9BF0E6;
-	box-sizing: border-box;
-}
-
-.study-list .nav-bar li:first-child {
-	border-radius: 20px;
-}
-
-.study-list .nav-bar li {
-	width: 40px;
-	height: 40px;
-	margin: 10px 0px;
-	background-color: #C4C4C4;
-}
-
-
-
-.study-list .title {
+.userinfo-part .title {
 	position : absolute;
     height: 62px;
 	width: 182px;
@@ -61,21 +20,22 @@ ul {
  	align-items: center;
 }
 
-.study-list .info {
-	font-size : 30px;
+.userinfo-part .info {
+	font-size : 25px;
 	position : absolute;
 	left: 430px;
-	top: 190px;
+	top: 170px;
 }
 
-.study-list .info .profile {
+.userinfo-part .info .profile {
 	position: absolute;
-	width: 110px;
-	height: 110px;
+	width: 100px;
+	height: 100px;
 	left: -175px;
-	top: 0px;
-	background: #C4C4C4;
+	top: -10px;
+	background: url(BG.png);
 	border-radius: 100px;
+
 }
 
 
@@ -84,7 +44,7 @@ ul {
     height: 574px;
 	width: 550px;
 	left: 256px;
-	top: 400px;
+	top: 300px;
 	border-radius: nullpx;
     border-collapse: collapse;
    	border-top: 1px solid #C4C4C4; 
@@ -99,9 +59,24 @@ ul {
 
 .td-input {
 	width:65%;
-   	padding-left: 50px;  	
   	border-bottom: 1px solid #C4C4C4; 
    	border-left: 1px solid #C4C4C4;  	
+}
+
+.td-input .grade {
+	width: 70px;
+	height: 28px;
+	border:none;
+}
+.td-input .state {
+	width: 70px;
+	height: 28px;
+	border:none;
+
+}
+.td-input .userTel {
+	width: 40px;
+	height: 28px;		
 }
 
 .info-edit {
@@ -113,5 +88,5 @@ ul {
 	background: #9BF0E6;
 	border-radius: 20px;
 	text-align:center;
-	
+	border:none;	
 }

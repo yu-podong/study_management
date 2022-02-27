@@ -6,20 +6,20 @@ import { Link } from 'react-router-dom';
 import './StudyListStyle.css';
 
 function StudyList() {
-	const [study, setStudy] = useState("");
-
-	useEffect(()=> {
-		axios.post("http://localhost:8091/study/list").then((response)=>{
-			if(response.data) {
-				setStudy(response.data);
-				console.log(study);
-			} else {
-				alert("failed to");
-			}
-		}).catch(()=>{
-			console.log("Error 발생!!!")
-		})
-	});
+	//const [study, setStudy] = useState("");
+//
+	// useEffect(()=> {
+	// 	axios.post("http://localhost:8091/study/list").then((response)=>{
+	// 		if(response.data) {
+	// 			setStudy(response.data);
+	// 			console.log(study);
+	// 		} else {
+	// 			alert("failed to");
+	// 		}
+	// 	}).catch(()=>{
+	// 		console.log("Error 발생!!!")
+	// 	})
+	// });
 
 	return (
 		<div className='study-list-component'>

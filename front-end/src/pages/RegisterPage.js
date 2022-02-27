@@ -1,7 +1,26 @@
 import '../style/register.css'
+import {Link} from 'react-router-dom';
+import React, { useState } from "react";
 
 function RegisterPage() {
+	const [userName, setUserName] = useState("");
+	const [gender, setGender]= useState("");
+	
+	const [userTel1, setUserTel1] = useState("");
+	const [userTel2, setUserTel2] = useState("");
+	const [userTel3, setUserTel3] = useState("");
+	
+	const [userNum, setUserNum] = useState("");
+	const [userEmail, setUserEmail] = useState("");
+	const [password, setPassword] = useState("");	
+	
+	const [grade, setGrade] = useState("");
+	const [state, setState] = useState("");
+	const [dept, setDept] = useState("");
+
+
 	return (
+		<section class = "main">
 		<div class="register">
 				{/* 회원가입 창 */}
 				<form class = "content">	
@@ -18,9 +37,9 @@ function RegisterPage() {
 						
 						<br/><br/>
 						<input type="text" class="form-control" placeholder="전화번호" name="userTel1" maxlength="3"/>
-						<span class = "hyphen">-</span>		
+						<span class = "hyphen"> - </span>		
 						<input type="text" class="form-control" name="userTel2" maxlength="4"/>
-						<span class = "hyphen">-</span>		
+						<span class = "hyphen"> - </span>		
 						<input type="text" class="form-control" name="userTel3" maxlength="4"/>
 					</fieldset>
 					
@@ -28,7 +47,9 @@ function RegisterPage() {
 						<span class = "text">이용 정보</span>				
 						<input type="text" class="form-control" placeholder="학번" name="userNum" maxlength="20"/>
 						<br/><br/>
-						<input type="password" class="form-control" placeholder="Password" name="password" maxlength="20"/>
+						<input type="text" class="form-control" placeholder="네이버 이메일" name="userEmail" maxlength="45"/>
+						<br/><br/>
+						<input type="password" class="form-control" placeholder="비밀번호" name="password" maxlength="20"/>
 					</fieldset>
 					
 					<fieldset class = "dept-info">
@@ -52,6 +73,7 @@ function RegisterPage() {
 					<input type="submit" class="register-btn" value="가입하기" />
 				</form>				
 			</div>
+			</section>
 	)
 }
 

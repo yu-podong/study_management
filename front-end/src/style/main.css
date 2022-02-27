@@ -74,6 +74,12 @@ html, body {
 	text-align: center;		
 	vertical-align: center;
 }
+.main .register .content .top {			
+	font-size: 30px;
+	line-height: 35px;
+	text-align: center;		
+	vertical-align: center;
+}
 
 .right-part .login #form-control {
 	position: relative;

@@ -1,9 +1,26 @@
 import {Link} from 'react-router-dom';
+import React, { useState } from "react";
 
 import '../App.css';
 import '../style/main.css';
 
 function MainPage() {
+
+  const dispatch = useDispatch();
+
+  const [userNum, setUserNum] = useState(" ");
+  const [Password, setPassword] = useState(" ");
+
+  useEffect(() => { 
+    fetch("/hello") 
+      .then((response) => { 
+        return response.json(); 
+      }) 
+      .then(function (data) { 
+        setMessage(data); 
+      }); 
+    }, []);
+
   return (
     <section class="main">
       {/* 왼쪽 영역 */}
@@ -25,15 +42,15 @@ function MainPage() {
             <span class = "top"><b>LOGIN</b></span>
           
             <form class = "input">
-              <input type="text" id="form-control" placeholder="학번" name="userID" maxlength="20"/>
+              <input type="text" id="form-control" placeholder="학번" name="userNum" maxlength="20">{userNum}</input>
               <br/><br/>
-              <input type="password" id="form-control" placeholder="Password" name="password" maxlength="20"/>
+              <input type="password" id="form-control" placeholder="Password" name="password" maxlength="20">{password}</input>
 
               <input type="submit" class="login-btn" value="로그인" />
             </form>
               
-            <Link to='/modify/pw' class="find-btn">ID/PW 찾기</Link>
-            <Link to='/register' class="register-btn" >회원가입</Link>
+            <Link to='/findpassword' class="find-btn">PW 찾기</Link>
+            <Link to="/register" class="register-btn" >회원가입</Link>
               
             <div class = "non-member">
               <span>회원이 아닌가요?<br/></span>

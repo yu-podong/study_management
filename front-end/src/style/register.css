@@ -69,13 +69,13 @@
 .register .usage-info .text {	
 	position: relative;
 	left : -146px;
-	top : 15px;	
+	top : 10px;	
 }
 
 .register .content .dept-info .text {
 	position: relative;
 	left : -85px;	
-	top : 15px;	
+	top : 10px;	
 }
 
 .register .personal-info {
