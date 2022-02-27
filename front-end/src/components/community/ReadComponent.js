@@ -1,5 +1,6 @@
-import React, {Component} from 'react';
 
+import axios from 'axios';
+import React,{ useEffect, useState } from 'react'
 // markdown-viewer
 import Prism from 'prismjs';
 import '@toast-ui/editor/dist/toastui-editor.css';
@@ -13,8 +14,10 @@ import { faPaperPlane } from '@fortawesome/free-solid-svg-icons';
 
 // css
 import './ReadStyle.css';
+import Unix_timestamp from './UnixTimestamp.js';
 
 // test variable
+
 let content = `# CommuContents Markdown으로 작성됨
 
 ## 프로젝트 주제
@@ -52,48 +55,129 @@ let writeInfo = {
 	'content': content
 }
 
-class ReadComponent extends Component {
-	render() {
+
+function GetPostID(location) {
+
+	console.log("location >>> ", location);
+	console.log("location.search >>> ", location.search);
+  
+	const params = new URLSearchParams(location.search);
+  
+	let postID = params.get("postID");
+  
+	console.log("params.get('postID') >>> ", postID);
+	return postID;
+  }
+
+function CommentList(num){
+	let result = [];
+	const [commentList, setCommentList] =useState([]);
+	let str = "/commu/comment/read?postID="+num;
+	useEffect(()=> {
+		axios.get(str).then((response)=>{
+			if(response.data) {
+				setCommentList(response.data);
+				console.log(commentList);
+			} else {
+				alert("failed to");
+			}
+		}).catch(()=>{
+			console.log("Error 발생!!!")
+		})
+	},[]);
+
+	for(let i = 0 ; i < commentList.length; i++) {
+	
+		result.push(
+			
+			<li> 
+			
+					<div commentList='user-info'>
+					<span>{commentList[i].userName}</span>
+					<span>{Unix_timestamp(commentList[i].date)}</span>
+					</div>
+					<p>{commentList[i].content}</p>
+			</li>
+				
+		)
+	}
+
+	
+	return result;
+	
+}
+
+function CommentPost(){
+	let num =GetPostID(window.location);
+	const axios = require('axios')
+	axios.post('/commu/comment/write',{
+		comID: 1,
+		userID: 1,
+		postID: num,
+		content: '리엑트 추가된 내용'
+	}).then((res)=>{
+	  console.log(res)
+	},[]);
+
+  
+}
+function ReadComponent()  {
+
+	let num =GetPostID(window.location);
+	let str = "/commu/read?postID="+num;
+	
+	
+	const [post, setPostList] =useState([]);
+
+	useEffect(()=> {
+		axios.get(str).then((response)=>{
+			if(response.data) {
+				setPostList(response.data);
+				console.log(post);
+			} else {
+				alert("failed to");
+			}
+		}).catch(()=>{
+			console.log("Error 발생!!!")
+		})
+	},[]);
+
+	
+	let content2 =post.content;
+	
+	
 		return(
 			<div className='commu-read-component'>
-				<span className='title'>{writeInfo.title}</span>
+				<span className='title'>{post.title}</span>
 				<ul className='detail-info'>
-					<li className='writer'>{writeInfo.writer}</li>
+					<li className='writer'>{post.userName}</li>
 					<li className='other'>
-						<span className='date'>{writeInfo.date}</span>
-						<span className='viewCnt'>{writeInfo.viewCnt}</span>
-						<span className='commentCnt'>{writeInfo.commentCnt}</span>
+						<span className='date'>{Unix_timestamp(post.date)}</span>
+						<span className='viewCnt'>{post.viewCnt}</span>
+						<span className='commentCnt'>{post.comCnt}</span>
 					</li>
 				</ul>
 				<div className='markdown-viewer'>
 					<Viewer
-						initialValue={writeInfo.content}
+						initialValue={content2}
 						plugins={[[codeSyntaxHighlight, { highlighter: Prism }]]} />
 				</div>
 				<ul className='comment-list'>
-					<li>
-						<div className='user-info'>
-							<span>강수</span>
-							<span>2022.01.20 01:23</span>
-						</div>
-						<p>오..좋은 프로젝트 주제이지만, 기존에 있는 Cafe나 Slack과 같은 커뮤니티와 많은 유사점을 가지기에, 차별점을 생각해둬야 할 거 같습니다 :&#41;</p>
-					</li>
-					<li>
-					<div className='user-info'>
-						<span>강수</span>
-						<span>2022.01.20 01:23</span>
-						</div>
-						<p>오..좋은 프로젝트 주제이지만, 기존에 있는 Cafe나 Slack과 같은 커뮤니티와 많은 유사점을 가지기에, 차별점을 생각해둬야 할 거 같습니다 :&#41;</p>
-					</li>
+				{CommentList(num)}
+		
 				</ul>
+				
 				<form action="">
-					<input type="text" name="content" placeholder='댓글을 작성해주세요.'/>
-					<label htmlFor="submit-btn"><FontAwesomeIcon icon={faPaperPlane} /></label>
+					<input name="postID" value={num}  type="hidden" />
+					<input type="text"  id="comment" placeholder='댓글을 작성해주세요.'/>
+					<label  onClick={CommentPost} htmlFor="submit-btn"><FontAwesomeIcon icon={faPaperPlane} /></label>
 					<input type="submit" id="submit-btn" style={{display: 'none'}}/>
+				
+
 				</form>
 			</div>
 		)
-	}
+	
 }
 
 export default ReadComponent;
