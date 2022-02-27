@@ -3,20 +3,11 @@ package com.study_management.controller;
 import java.util.Arrays;
 import java.util.List;
 
+import com.study_management.domain.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
-import com.study_management.domain.CommentDTO;
-import com.study_management.domain.CommentVO;
-import com.study_management.domain.PostDTO;
-import com.study_management.domain.PostListVO;
-import com.study_management.domain.PostVO;
 import com.study_management.mapper.CommuMapper;
 
 import lombok.AllArgsConstructor;
@@ -44,8 +35,12 @@ public class CommuController {
 		}
 
 	//질문 리스트 보기
-	@GetMapping(value = "/list/{studyID}", produces = {MediaType.APPLICATION_JSON_UTF8_VALUE})
-	public List<PostListVO> PostListGet(@PathVariable("studyID") int studyID) {
+	//http://localhost:8083/commu/list?studyID=1
+	@GetMapping(value = "list", produces = {MediaType.APPLICATION_JSON_UTF8_VALUE})
+	public List<PostListVO> PostListGet(@RequestParam("studyID") int studyID)
+	//@GetMapping(value = "list/{studyID}", produces = {MediaType.APPLICATION_JSON_UTF8_VALUE})
+	//public List<PostListVO> PostListGet(@PathVariable("studyID") int studyID)
+	{
 		System.out.println("1=====================================");
 		log.info("list: "+studyID);	
 		List<PostListVO> PostList = CommuMapper.PostListVOGet(studyID);
@@ -55,23 +50,29 @@ public class CommuController {
 	}
 	
 	//선택한 질문  내용 보기
-	@GetMapping(value = "read/{postID}", produces = { MediaType.APPLICATION_JSON_UTF8_VALUE })
-	public PostVO PostGet(@PathVariable("postID") int postID) {
+    //http://localhost:8083/commu/read?postID=1
+	@GetMapping(value = "read", produces = {MediaType.APPLICATION_JSON_UTF8_VALUE})
+	public PostVO PostGet(@RequestParam("postID") int postID)
+	//@GetMapping(value = "read", produces = { MediaType.APPLICATION_JSON_UTF8_VALUE })
+	//public PostVO PostGet(@PathVariable("postID") int postID)
+	{
 		System.out.println("1=====================================");
-		log.info("Post: "+postID);
+		System.out.println("Post: "+postID);
 		PostVO Post = CommuMapper.PostVOGet(postID);
 		log.info("PostViewCntUpdate: " + postID);
 		CommuMapper.PostViewCntUpdate(postID);
 		System.out.println("=====================================");
+
 		return Post;
 	}
 	
 	
 	//댓글 리스트 보기
-	@GetMapping(value = "/comment/read/{postID}", produces = {MediaType.APPLICATION_JSON_UTF8_VALUE})
-	public List<CommentVO> CommentGet(@PathVariable("postID") int postID) {
+	//http://localhost:8083/commu/comment/read?postID=1
+	@GetMapping(value = "comment/read", produces = {MediaType.APPLICATION_JSON_UTF8_VALUE})
+	public List<CommentVO> CommentGet(@RequestParam("postID") int postID) {
 		System.out.println("1=====================================");
-		log.info("list: "+postID);
+		System.out.println("commentlist: "+postID);
 		
 		List<CommentVO> CommentList = CommuMapper.CommentVOGet(postID);
 		System.out.println("=====================================");
