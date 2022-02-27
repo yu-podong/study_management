@@ -1,5 +1,5 @@
 package com.study_management.service;
-
+/*
 import com.study_management.domain.MonthlyPlanDTO;
 import com.study_management.domain.WeeklyPlanDTO;
 import com.study_management.mapper.PlanMapper;
@@ -94,3 +94,4 @@ public class PlanServiceImpl implements PlanService{
 }
 
 
+*/
