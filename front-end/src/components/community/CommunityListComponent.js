@@ -1,22 +1,58 @@
-import React, {Component} from 'react';
+//import React, {Component} from 'react';
+//import { Link } from 'react-router-dom';
+import axios from 'axios';
+import React,{ useEffect, useState,Component } from 'react';
 import { Link } from 'react-router-dom';
-
 //css
-import './CommunityListStyle.css'
+import './CommunityListStyle.css';
+import Unix_timestamp from './UnixTimestamp.js';
 
-const renderCommuList = () => {
+function GetStudyID(location) {
+
+	console.log("location >>> ", location);
+	console.log("location.search >>> ", location.search);
+  
+	const params = new URLSearchParams(location.search);
+  
+	let studyID = params.get("studyID");
+  
+	console.log("params.get('studyID') >>> ", studyID);
+	return studyID;
+  }
+
+function RenderCommuList() {
+	let num =GetStudyID(window.location);
 	let result = [];
+	let str ="/commu/list?studyID="+num;
 
-	for(let i = 0 ; i < 8; i++) {
+	const [postList, setPostList] =useState([]);
+
+	useEffect(()=> {
+		axios.get(str).then((response)=>{
+			if(response.data) {
+				setPostList(response.data);
+				console.log(postList);
+			} else {
+				alert("failed to");
+			}
+		}).catch(()=>{
+			console.log("Error 발생!!!")
+		})
+	},[]);
+
+	for(let i = 0 ; i < postList.length; i++) {
+		str='/commu/read?postID='+(postList[i].postID)
+	
 		result.push(
-			<li>
+			
+			<li> 
 				<ul className='rows'>
-					<Link to='/commu/read'>
-						<li>유현진</li>
-						<li>React 프로젝트를 진행하면서, event listener에 대해 궁금합니다.!!</li>
-						<li>2022.02.02</li>
-						<li>101</li>
-						<li>20</li>
+					<Link to={str}>
+					<li> {postList[i].userName}</li>
+						<li>{postList[i].title}</li>
+						<li>{Unix_timestamp(postList[i].date)}</li>
+						<li>{postList[i].viewCnt}</li>
+						<li>{postList[i].comCnt}</li>
 					</Link>
 				</ul>
 			</li>
@@ -26,8 +62,10 @@ const renderCommuList = () => {
 	return result;
 }
 
-class CommunityListComponent extends Component {
-	render() {
+
+function CommunityListComponent() {
+	 {
+		
 		return(
 			<div className='commu-list-component'>
 				<div class="under_menu">
@@ -48,7 +86,7 @@ class CommunityListComponent extends Component {
 							<li scope="col">댓글</li>
 						</ul>
 					</li>
-					{renderCommuList()}
+					{RenderCommuList()}
 				</ul>
 			</div>
 		)
